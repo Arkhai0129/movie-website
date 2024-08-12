@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.Navbar p {
+  margin: 0;
+}
+.movie-container img {
+  width: 265px;
+  margin: 15px 0px 10px 0px;
+  border-radius: 10px;
+}
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 15px;
+  width: 300px;
+  height: 720px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  filter: drop-shadow(0.1rem 0.2rem 0.3rem rgb(184, 184, 184));
+}
+
+.movie-description {
+  width: 250px;
+}
+
+.movie-description {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 0px 0px 0px;
+}
+
+.buttons button {
+  border-radius: 10px;
+  border: none;
+  padding: 5px 8px 5px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.buttons h3 {
+  text-align: center;
+}
+
+.likeButton {
+  background-color: rgb(50, 179, 50);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dislikeButton {
+  background-color: rgb(190, 47, 47);
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.resetButton {
+  background-color: rgb(133, 128, 128);
+  color: white;
 }
