@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Navbar } from "./assets/components/Navbar";
 import { Movies } from "./assets/components/Movies";
@@ -47,22 +47,54 @@ const App = () => {
     },
   ];
 
-  return (
-    <div>
-      <Navbar />
-      <main>
-        {MovieData.map((data) => (
-          <div className="movie-card" key={data.id}>
-            <Movies
-              imgUrl={data.imgUrl}
-              name={data.name}
-              description={data.description}
-            />
-          </div>
-        ))}
-      </main>
-    </div>
-  );
-};
+  const [text, setvalue] = useState("");
+  const textInput = (e) => {
+    const inputvalue = e.target.value;
+    setvalue(inputvalue);
+  };
 
+  let filteredMovie = MovieData.filter((MovieData) =>
+    MovieData.name.toLowerCase().includes(text)
+  );
+
+  if (filteredMovie.length === 0) {
+    return (
+      <div>
+        <Navbar />
+        <input
+          className="searchMovie"
+          type="text"
+          placeholder="Search movie..."
+          onChange={textInput}
+        ></input>
+        <main>
+          <h3>No data to show...</h3>
+        </main>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Navbar />
+        <input
+          className="searchMovie"
+          type="text"
+          placeholder="Search movie..."
+          onChange={textInput}
+        ></input>
+        <main>
+          {filteredMovie.map((data) => (
+            <div className="movie-card" key={data.id}>
+              <Movies
+                imgUrl={data.imgUrl}
+                name={data.name}
+                description={data.description}
+              />
+            </div>
+          ))}
+        </main>
+      </div>
+    );
+  }
+};
 export default App;

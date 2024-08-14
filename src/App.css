@@ -65,3 +65,20 @@ main {
   background-color: rgb(133, 128, 128);
   color: white;
 }
+
+.searchMovie {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(66, 66, 66);
+  border-radius: 20px;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  position: absolute;
+  right: 50px;
+}
+
+::placeholder {
+  color: white;
+}
